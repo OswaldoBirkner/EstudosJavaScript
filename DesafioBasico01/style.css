@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(to bottom, #240046, #3c096c);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form.submit-form {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px
+}
+
+input[type="number"] {
+    padding: 5px;
+    width: 100px;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    margin: 10px;
+}

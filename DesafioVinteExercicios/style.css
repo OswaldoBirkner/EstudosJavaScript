@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(to top, purple, black);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+fieldset {
+    margin-top: 35px;
+    border: blue;
+    padding: 20px;
+    background: linear-gradient(to top, pink, white);
+    border-radius: 15px;
+}
+
+legend {
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="number"] {
+    padding: 5px;
+    width: 100px;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    margin: 10px;
+}
