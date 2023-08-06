@@ -5,6 +5,7 @@ function pegarItens() {
             return dados.json();
         })
         .then((data) => {
+            localStorage.setItem("cardapio", JSON.stringify(data))
             montarMenu(data);
         });
 }
@@ -21,10 +22,10 @@ function montarMenu(itensMenu) {
                  <img src="${imagem}" class="product-image" alt="${nome}">
                 <div class= "container-description"><h3 class="product-title">${nome}</h3>
                 <p class="product-description">${descricao}</p>
-                <p class="product-price">Preço: ${valor}</p>
+                <p class="product-price">Preço: ${valor.toFixed(2).replace(".", ",")} R$</p>
                 <div class="product-quantity-btn">
-                    <input type="number" id="quantidadeAlmondega" name="quantity" min="1" max="10" value="1">
-                    <button id="addButtonAlmondega" type="button">Adicionar ao Pedido</button>
+                    <input type="number" id="quantity-${id}" name="quantity" min="1" max="10" value="1">
+                    <button id="${id}" type="button" onclick="addProduct(${id})">Adicionar ao Pedido</button>
                 </div>
                 </div>
             </div>
@@ -32,6 +33,15 @@ function montarMenu(itensMenu) {
         })
         divProdutos.innerHTML += textHtml;
     })
+}
+
+const addProduct = (id) => {
+    const menu = localStorage.getItem("cardapio");
+    const product = JSON.parse(menu).find((itemMenu) => itemMenu.id === id);
+    const quantity = document.getElementById(`quantity-${product.id}`).value
+    const oldList = JSON.parse(localStorage.getItem("listaDePedidos"))
+    if (oldList) localStorage.setItem("listaDePedidos", JSON.stringify([... oldList, {...product, quantity}]))
+    else localStorage.setItem("listaDePedidos", JSON.stringify([{...product, quantity}]))
 }
 
 
